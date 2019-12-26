@@ -63,6 +63,13 @@ class TechList extends Component {
   handleSubmit = e =>{
     e.preventDefault();
     
+    //check if the tech exists
+    if (this.state.techs.includes(this.state.newTech)) {
+      alert('The typed tech already exists in the list.');
+      return;
+    }
+
+
     // ... copy everything from the techs array
     this.setState({ 
       techs: [... this.state.techs, this.state.newTech],
